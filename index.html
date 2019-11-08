@@ -10,6 +10,26 @@
 
 <style type="text/css">
 		      
+canvas {
+    	background: url("NightSky.png");
+  	 	border: 5px solid blue;
+    	margin-left: 250px;
+    	margin-top: 200px;
+    	}
+        #stopbutton{
+            border-radius: 50%;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            position: absolute;
+            left: 300px;
+            top: 250px;
+        }
+          #playbutton{
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            left: 500px;
+            top: 250px;
+        }
 		      
 h1 {
 	text-align: center;
@@ -64,10 +84,18 @@ Also, if you are curious, check out my <a href="http://wesleyguergah.wordpress.c
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
+ <button id = "playbutton" onclick="play()">Play</button> 
+<button id = "stopbutton" onclick="stop()">Stop</button> 
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script src = "NEWGAME.js">
+</script>
 
 											      
 </body>
 
+											      
+						      
 
 
 
