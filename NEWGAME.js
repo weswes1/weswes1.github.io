@@ -170,6 +170,10 @@ function draw() {
     yellowx = Math.random()*canvas.width;
     score=0;
     size=20;
+    rightPressed = false;
+    leftPressed = false;
+    upPressed = false;
+    downPressed = false;
   }
 
   bluey+=2;   // These variables update no matter what
