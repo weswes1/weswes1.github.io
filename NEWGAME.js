@@ -161,7 +161,7 @@ function draw() {
   }
 
   if (size >= canvas.width/2 ){     // The player got to Big, game over, update variables.
-    alert("Too big. Game over. your score: " + score)
+    alert("Too big. Game over. your score: " + score.toString().substr(0,4));
     redy=0;
     redx = Math.random()*canvas.width;
     bluey=0;
