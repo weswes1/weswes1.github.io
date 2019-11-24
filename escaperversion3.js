@@ -192,12 +192,12 @@ if (playing == false && exploding==false){
 
 }
 
-function play(){
+function play_two(){
     playing = true;
     return playing;
 }
 
-function stop(){
+function stop_two(){
   playing = false;
   exploding = false;
   return playing;
