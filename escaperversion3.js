@@ -189,15 +189,17 @@ if (playinga == false && exploding==true){
 if (playinga == false && exploding==false){
 }
 
-
+alert("this case")
 }
 
 function play_two(){
+    alert("play_two triggered")
     playinga = true;
     return playinga;
 }
 
 function stop_two(){
+  alert("play_two triggered")
   playinga = false;
   exploding = false;
   return playinga;
