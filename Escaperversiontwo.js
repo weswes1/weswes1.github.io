@@ -188,7 +188,7 @@ if (playing == false && exploding==false){
 
 }
 
-function play(){
+function play_two(){
     playing = true;
     var upPressed = true;
 	elevation = canvass.height/2-40; // Variable for the Y position of the flying plane
@@ -199,7 +199,7 @@ function play(){
     return playing;
 }
 
-function stop(){
+function stop_two(){
   playing = false;
   exploding =false;
   return playing;
