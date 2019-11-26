@@ -31,6 +31,7 @@ function keyUpHandler(e) {
 }}
 
 function drawCharacter() {        // Draws the main character of the game
+	alert("triggered")
 	ctxx.beginPath();
 	ctxx.arc(canvass.width/2-40, elevation, 20, 0,2 * Math.PI);
 	ctxx.fillStyle = "red";
