@@ -192,13 +192,11 @@ if (playinga == false && exploding==false){
 }
 
 function play_two(){
-    alert("play_two triggered")
     playinga = true;
     return playinga;
 }
 
 function stop_two(){
-  alert("play_two triggered")
   playinga = false;
   exploding = false;
   return playinga;
