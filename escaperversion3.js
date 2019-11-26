@@ -4,10 +4,10 @@ window.addEventListener("keydown", function(e) {   // space and arrow keys
     }
 }, false);
 
-var playinga;
+var playing;
 var canvass = document.getElementById("myCanvastwo");
 var ctxx = canvass.getContext("2d");
-var uppPressed = true;
+var upPressed = true;
 elevation = canvass.height/2-40; // Variable for the Y position of the flying plane
 var score = 0; 
 var scalers = [0,0,0];   // alters the position of the asteroids
@@ -22,16 +22,15 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
 if (e.key=="Up" || e.key=="ArrowUp"){
-      uppPressed = false;
+      upPressed = false;
 }}
 
 function keyUpHandler(e) {
     if (e.key=="Up" || e.key == "ArrowUp"){
-      uppPressed = true;
+      upPressed = true;
 }}
 
 function drawCharacter() {        // Draws the main character of the game
-	alert("triggered")
 	ctxx.beginPath();
 	ctxx.arc(canvass.width/2-40, elevation, 20, 0,2 * Math.PI);
 	ctxx.fillStyle = "red";
@@ -97,7 +96,6 @@ function explosion(){
 		}
 
 function generateAsteroid() {
-		drawCharacter();
 		ctxx.beginPath();
 		ctxx.arc(canvass.width-scalers[0], asteroidHeights[0], 40, 0,2 * Math.PI);
 		ctxx.fillStyle = "yellow";
@@ -119,8 +117,8 @@ function generateAsteroid() {
 
 
 function draw(){
-	 if (playinga==true && exploding == false){
-		 drawCharacter();
+
+	 if (playing==true && exploding == false){
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		drawCharacter();
 		generateAsteroid();
@@ -151,10 +149,10 @@ function draw(){
 		score=0;
 		elevation = canvass.height/2-40;
 		exploding = true;
-		playinga = false;
-		
+		playing = false;
 
-		
+
+
 	}
 
 	for (i=0; i<=2; i++) {
@@ -162,7 +160,7 @@ function draw(){
 			scalers = [0,0,0];
 			score=0;
 			upPressed = true;
-			playinga = false;
+			playing = false;
 			exploding = true;
 
 			}}
@@ -174,10 +172,10 @@ function draw(){
 }
 
 
-if (playinga == false && exploding==true){
+if (playing == false && exploding==true){
 	explosion();
 	if (explosionRadius >= canvass.width) {
-		alert("Game over. Your score:" + score.toString().substring(0,3) + " . The game will Press close and stop to stop playinga. Press close to play again. ")
+		alert("Game over. Your score:" + score.toString().substring(0,3) + " . The game will Press close and stop to stop playing. Press close to play again. ")
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		explosionRadius = 0;
 		exploding = false;
@@ -188,18 +186,21 @@ if (playinga == false && exploding==true){
 	}
 }
 
+if (playing == false && exploding==false){
+}
+
 
 }
 
-function play_two(){
-    playinga = true;
-    return playinga;
+function play(){
+    playing = true;
+    return playing;
 }
 
-function stop_two(){
-  playinga = false;
+function stop(){
+  playing = false;
   exploding = false;
-  return playinga;
+  return playing;
 }
 
-setInterval(draw,10);
+setInterval(draw,10); 
