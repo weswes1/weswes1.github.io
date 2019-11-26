@@ -7,7 +7,7 @@ window.addEventListener("keydown", function(e) {   // space and arrow keys
 var playinga;
 var canvass = document.getElementById("myCanvastwo");
 var ctxx = canvass.getContext("2d");
-var upPressed = true;
+var uppPressed = true;
 elevation = canvass.height/2-40; // Variable for the Y position of the flying plane
 var score = 0; 
 var scalers = [0,0,0];   // alters the position of the asteroids
@@ -22,12 +22,12 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
 if (e.key=="Up" || e.key=="ArrowUp"){
-      upPressed = false;
+      uppPressed = false;
 }}
 
 function keyUpHandler(e) {
     if (e.key=="Up" || e.key == "ArrowUp"){
-      upPressed = true;
+      uppPressed = true;
 }}
 
 function drawCharacter() {        // Draws the main character of the game
@@ -97,6 +97,7 @@ function explosion(){
 		}
 
 function generateAsteroid() {
+		drawCharacter();
 		ctxx.beginPath();
 		ctxx.arc(canvass.width-scalers[0], asteroidHeights[0], 40, 0,2 * Math.PI);
 		ctxx.fillStyle = "yellow";
@@ -119,6 +120,7 @@ function generateAsteroid() {
 
 function draw(){
 	 if (playinga==true && exploding == false){
+		 drawCharacter();
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		drawCharacter();
 		generateAsteroid();
