@@ -118,8 +118,8 @@ function generateAsteroid() {
 
 
 function draw(){
-
 	 if (playinga==true && exploding == false){
+		alert("triggered here")
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		drawCharacter();
 		generateAsteroid();
