@@ -189,7 +189,6 @@ if (playinga == false && exploding==true){
 if (playinga == false && exploding==false){
 }
 
-alert("this case")
 }
 
 function play_two(){
