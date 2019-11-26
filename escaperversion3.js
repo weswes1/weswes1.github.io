@@ -186,8 +186,6 @@ if (playinga == false && exploding==true){
 	}
 }
 
-if (playinga == false && exploding==false){
-}
 
 }
 
