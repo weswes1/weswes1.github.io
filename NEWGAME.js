@@ -66,13 +66,6 @@ function keyUpHandler(e) {
     }
 }
 
-function drawCharacter() {        // Draws the main character of the game
-  ctx.beginPath();
-  ctx.arc(x,y, size, 0, Math.PI*2);
-  ctx.fillStyle = "#000000";
-  ctx.fill();
-  ctx.closePath();
-}
 
 // draw a falling brick
 
@@ -106,7 +99,11 @@ function generateYellowBrick(){
 function draw() {
   if (playing==true){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawCharacter();
+  ctx.beginPath();
+  ctx.arc(x,y, size, 0, Math.PI*2);
+  ctx.fillStyle = "#000000";
+  ctx.fill();
+  ctx.closePath();
   generateBrick();
   generateRedBrick();
   generateYellowBrick();
