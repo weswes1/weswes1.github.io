@@ -4,10 +4,10 @@ window.addEventListener("keydown", function(e) {   // space and arrow keys
     }
 }, false);
 
-var playing;
+var playinga;
 var canvass = document.getElementById("myCanvastwo");
 var ctxx = canvass.getContext("2d");
-var upPressed = true;
+var upPressedtwo = true;
 elevation = canvass.height/2-40; // Variable for the Y position of the flying plane
 var score = 0; 
 var scalers = [0,0,0];   // alters the position of the asteroids
@@ -22,12 +22,12 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
 if (e.key=="Up" || e.key=="ArrowUp"){
-      upPressed = false;
+      upPressedtwo = false;
 }}
 
 function keyUpHandler(e) {
     if (e.key=="Up" || e.key == "ArrowUp"){
-      upPressed = true;
+      upPressedtwo = true;
 }}
 
 function drawCharacter() {        // Draws the main character of the game
@@ -117,12 +117,12 @@ function generateAsteroid() {
 
 
 function draw(){
-
-	 if (playing==true && exploding == false){
+	 if (playinga==true && exploding == false){
+	 	score += .01;
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		drawCharacter();
 		generateAsteroid();
-		if (upPressed==true && elevation < canvass.height-40) {    // if spacePressed is true, increase elevation
+		if (upPressedtwo==true && elevation < canvass.height-40) {    // if spacePressed is true, increase elevation
 			elevation+=2;
 		}
 
@@ -145,22 +145,20 @@ function draw(){
 	if (elevation == canvass.height-40 || elevation == 40) {				// Hit the bottom or top of the screen, game over!
 
 		scalers = [0,0,0];
-		upPressed = true;
-		score=0;
+		upPressedtwo = true;
 		elevation = canvass.height/2-40;
 		exploding = true;
-		playing = false;
+		playinga = false;
+		
 
-
-
+		
 	}
 
 	for (i=0; i<=2; i++) {
 		if (Math.abs(elevation-asteroidHeights[i]) <= 60 && Math.abs(canvass.width/2-scalers[i]) <= 78 )	{
 			scalers = [0,0,0];
-			score=0;
-			upPressed = true;
-			playing = false;
+			upPressedtwo = true;
+			playinga = false;
 			exploding = true;
 
 			}}
@@ -168,39 +166,35 @@ function draw(){
 	scalers[0]+=2;
 	scalers[1]+=3;
 	scalers[2]+=4;
-	score += .1;
 }
 
 
-if (playing == false && exploding==true){
+if (playinga == false && exploding==true){
 	explosion();
 	if (explosionRadius >= canvass.width) {
-		alert("Game over. Your score:" + score.toString().substring(0,3) + " . The game will Press close and stop to stop playing. Press close to play again. ")
+		alert("Game over. Your score: " + score.toString().substring(0,3) + " The game will start agin automatically when you press close. Press close and stop to stop playing.")
+		score = 0; 
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		explosionRadius = 0;
 		exploding = false;
 		elevation = canvass.height/2-40; // Variable for the Y position of the flying plane
-		score = 0; 
 		scalers = [0,0,0];   // alters the position of the asteroids
 		asteroidHeights = [Math.random()*(canvass.height-80),Math.random()*(canvass.height-80),Math.random()*(canvass.height-80)]
 	}
 }
 
-if (playing == false && exploding==false){
-}
-
 
 }
 
-function play(){
-    playing = true;
-    return playing;
+function play_two(){
+    playinga = true;
+    return playinga;
 }
 
-function stop(){
-  playing = false;
+function stop_two(){
+  playinga = false;
   exploding = false;
-  return playing;
+  return playinga;
 }
 
-setInterval(draw,10); 
+setInterval(draw,10);
