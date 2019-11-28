@@ -1,4 +1,3 @@
-
 window.addEventListener("keydown", function(e) {
     // space and arrow keys
     if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
@@ -67,8 +66,6 @@ function keyUpHandler(e) {
 }
 
 
-// draw a falling brick
-
 function generateBrick(){
   ctx.beginPath();
   ctx.arc(bluex,bluey, 20, 0, Math.PI*2);
@@ -99,11 +96,13 @@ function generateYellowBrick(){
 function draw() {
   if (playing==true){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   ctx.beginPath();
   ctx.arc(x,y, size, 0, Math.PI*2);
   ctx.fillStyle = "#000000";
   ctx.fill();
   ctx.closePath();
+
   generateBrick();
   generateRedBrick();
   generateYellowBrick();
@@ -171,6 +170,8 @@ function draw() {
     leftPressed = false;
     upPressed = false;
     downPressed = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    playing=false;
   }
 
   bluey+=2;   // These variables update no matter what
@@ -187,14 +188,6 @@ function play(){
 
 function stop(){
   playing = false;
-  redy=0;
-  redx = Math.random()*canvas.width;
-  bluey=0;
-  bluex = Math.random()*canvas.width;
-  yellowy=0;
-  yellowx = Math.random()*canvas.width;
-  score=0;
-  size=20;
   return playing;
 }
 
