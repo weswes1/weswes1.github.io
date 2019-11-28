@@ -172,7 +172,7 @@ function draw(){
 if (playinga == false && exploding==true){
 	explosion();
 	if (explosionRadius >= canvass.width) {
-		alert("Game over. Your score: " + score.toString().substring(0,3) + " The game will start agin automatically when you press close. Press close and stop to stop playing.")
+		alert("Game over. Your score: " + score.toString().substring(0,3) + " Press close to play again.")
 		score = 0; 
 		ctxx.clearRect(0, 0, canvass.width, canvass.height);
 		explosionRadius = 0;
