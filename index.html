@@ -1,6 +1,8 @@
-<!doctype html>
+
+ <!doctype html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <meta charset="utf-8">
     <meta name="keywords" content="writing, history, science, mathematics, poetry, blog, professional, CV, Programming Art, Teaching, Travelling, Products, Business />
     <link type="text/css" rel="stylesheet" href="home.css" media="all" />
@@ -13,17 +15,13 @@
     background: url("NightSky.png");
     border: 5px solid blue;
       margin-left: 250px;
-      top: 1200px;
+      top: 1300px;
       }
-
       #myCanvastwo {
-
       background: url("saturn.png");
       border: 5px solid blue;
       margin-left: 275px;
-      margin-top: 200px;
-
-
+      margin-top: 20px;
       }
                                   
         #stopbutton{
@@ -31,46 +29,51 @@
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             position: absolute;
             left: 360px;
-            top: 1200px;
+            top: 1250px;
             font-family : fantasy;
-            background-color: #008CBA;;
+            background-color: #008CBA;
         }
           #playbutton{
              border-radius: 50%;
             position: absolute;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             left: 580px;
-            top: 1200px;
+            top: 1250px;
             font-family : fantasy;
             background-color: #008CBA;
         }
-
         #playbutton_two {
           border-radius: 50%;
             position: absolute;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             left: 580px;
-            top: 1800px;
+            top: 1720px;
             font-family : fantasy;
             background-color: #008CBA;
-
         }
-
         #stopbutton_two{
            border-radius: 50%;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             position: absolute;
             left: 360px;
-            top: 1800px;
+            top: 1720px;
             font-family : fantasy;
             background-color: #008CBA;
-
-
         }
+         #gamesection {
+          font-family: 'Press Start 2P', cursive;
+        }
+
+
           
 h1 {
   text-align: center;
   font-family: verdana;
+
+}
+h2 {
+  font-family: 'Press Start 2P', cursive;
+
 }
 img {
   display: inline-flex;
@@ -79,6 +82,10 @@ img {
   height: 300px;
 }       
 p {font-family: Luminari, fantasy;}
+
+title {
+  color: "#ffa500";
+}
 </style>
 <body>
 <h1> Wesley Guergah's Website </h1>
@@ -97,23 +104,20 @@ If you are curious, check out my <a href="http://wesleyguergah.wordpress.com"> b
 <img src="arabesque2.png"> </img>
 <img src="afrochiller.png"> </img>
 <img src="saturn.png"> </img>
-                           	
-
-<h1> Game Section </h1>
+                            
+<h1 id ="gamesection"> Game Section </h1>
 <h2> Asteroid Frenzy</h2>
+<p>** ONLY playable on desktop or laptop. No mobile or tablet support yet! Controls: use the four arrow keys to move the black ball. The goal of this game is avoid getting too large, if you hit anything besides the blue ball, your size will increase. Try to stay alive as long as possible to get a hiscore! </p>
 <button id = "playbutton" onclick="play()">Play</button> 
 <button id = "stopbutton" onclick="stop()">Stop</button> 
 <canvas id="myCanvas" width="480" height="320"></canvas>
   
                           
 <h2>SATURN ESCAPE</h2>
-
+<p>Controls: Use the up key to keep the star ship flying in the correct area. Avoid colliding with the top and bottom wall or the asteroids! The goal of this game is to stay alive as long as possible. Try to get a hiscore! </p>
 <canvas id="myCanvastwo" width="780" height="600"> </canvas>
-<button id = "playbutton_two" onclick="play_two()">Playgame</button> 
-<button id = "stopbutton_two" onclick="stop_two()">Stopgame</button> 
-
-
-
+<button id = "playbutton_two" onclick="play_two()">Play</button> 
+<button id = "stopbutton_two" onclick="stop_two()">Stop</button> 
 <p> What do you think? Email me at guergahwes[at]gmail[dot]com. If you can, leave a comment so I can continue making programming art and games. 
 </p>
 <script src = "escaperversion3.js"> </script>
