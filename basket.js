@@ -13,7 +13,7 @@ var baaly=650;
 
 var shipx=730;
 var shipy=600;
-
+var released = false;
 var scorecount = 0;
 var hitcount = 0;
 
@@ -30,13 +30,14 @@ function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
         upkeyPressed = true;
     }}
+
 function keyUpHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
         upkeyPressed = false;
     }}
+
 function stop_basket() {
   playing = false;
-  alert(playing);
 }
 
 function play_basket() {
@@ -67,65 +68,71 @@ function generateShip() {
 }
 
 function animate(){
-  if (upkeyPressed == true && power <= 300){
-  	power += 1;
-    powercopy += 1;
-    control+=.1;
-  }
-  else if (upkeyPressed == false && powercopy > 0) {
-    powercopy-=2;
+  if (playing == true){
+    if (upkeyPressed == true && power <= 300 && baalx==10 && released == false){
+    	power += 1;
+      powercopy += 1;
+      control+=.1;
+
+    }
+    else if (powercopy > 0 ) {
+      powercopy-=2;
+      released = true;
+      }
+
+    else if (baalx >= 740) {      // Reset the ball variables
+       scorecount+=1;
+       power = 0;
+       control =0;
+       powercopy = 0;
+       baalx=10;
+       baaly=640;
+       released = false;
     }
 
-  else if (baalx >= 740) {      // Reset the ball variables
-     scorecount+=1;
-     power = 0;
-     control =0;
-     powercopy = 0;
-     baalx=10;
-     baaly=640;
-
+    else {
+    launchBall();}
+    
+  if (Math.pow((baalx-shipx)**2+(baaly-shipy)**2,.5) < 75 )  { // If distance between baalx,baaly is less than 
+    {
+      shipy = Math.random()*600
+      hitcount+=1;
+    }
   }
 
-  else {
-  launchBall();}
-  
-if (Math.pow((baalx-shipx)**2+(baaly-shipy)**2,.5) < 75 )  { // If distance between baalx,baaly is less than 
-  {
-    shipy = Math.random()*600
-    hitcount+=1;
+
+  if ( scorecount%5==0 && scorecount > 0){
+    alert("Game over. You hit the invading ship " + hitcount.toString() + " out of 5 times");
+    scorecount = 0 ;
+    hitcount = 0;
+    upkeyPressed == false
+    playing =false;
+    released == false
   }
-}
-
-
-if ( scorecount%5==0 && scorecount > 0){
-  alert("Game over. You hit the invading ship " + hitcount.toString() + " out of 5 times");
-  scorecount = 0 ;
-  hitcount = 0;
-}
 
 
 
-  cttxx.clearRect(0, 0, canvasthree.width, canvasthree.height);
-  generateShip();
+    cttxx.clearRect(0, 0, canvasthree.width, canvasthree.height);
+    generateShip();
 
-  cttxx.beginPath();
-  cttxx.rect(230,500, 300,40, 50);
-  cttxx.fillStyle = "blue";
-  cttxx.fill();
-  cttxx.closePath();
+    cttxx.beginPath();
+    cttxx.rect(230,500, 300,40, 50);
+    cttxx.fillStyle = "blue";
+    cttxx.fill();
+    cttxx.closePath();
 
-  cttxx.beginPath();
-  cttxx.rect(230,500, powercopy,40, 50);
-  cttxx.fillStyle = "yellow";
-  cttxx.fill();
-  cttxx.closePath();
+    cttxx.beginPath();
+    cttxx.rect(230,500, powercopy,40, 50);
+    cttxx.fillStyle = "yellow";
+    cttxx.fill();
+    cttxx.closePath();
 
-  cttxx.beginPath();
-  cttxx.arc(baalx,baaly, 30, 0, 2 * Math.PI);
-  cttxx.fillStyle = "black";
-  cttxx.fill();
-  cttxx.closePath();
-
+    cttxx.beginPath();
+    cttxx.arc(baalx,baaly, 30, 0, 2 * Math.PI);
+    cttxx.fillStyle = "black";
+    cttxx.fill();
+    cttxx.closePath();
+  }
 }
 
 setInterval(animate,10);
