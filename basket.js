@@ -1,6 +1,6 @@
 
 var misses = 0;		// Number of misses 
-var playing;
+var playingb;
 var upkeyPressed = false;
 var power = 0;
 var powercopy = 0;
@@ -37,11 +37,11 @@ function keyUpHandler(e) {
     }}
 
 function stop_basket() {
-  playing = false;
+  playingb = false;
 }
 
 function play_basket() {
-  playing = true;
+  playingb = true;
   misses = 0;  
   upkeyPressed = false;
   power = 0;
@@ -68,7 +68,7 @@ function generateShip() {
 }
 
 function animate(){
-  if (playing == true){
+  if (playingb == true){
     if (upkeyPressed == true && power <= 300 && baalx==10 && released == false){
     	power += 1;
       powercopy += 1;
@@ -106,7 +106,7 @@ function animate(){
     scorecount = 0 ;
     hitcount = 0;
     upkeyPressed == false
-    playing =false;
+    playingb =false;
     released == false
   }
 
