@@ -1,7 +1,7 @@
 
 
 var canvas = document.getElementById("myCanvasfour");
-var ctx = canvas.getContext("2d");
+var ctxrr = canvas.getContext("2d");
 
 var x = canvas.width/2;
 var y = canvas.height/2;
@@ -76,18 +76,18 @@ function keyUpHandler(e) {
 
 
 function buildBoundaries(){
-	ctx.beginPath();
-	ctx.rect(xPosition,0,20,canvas.height);
-	ctx.fillStyle = barColor;
-	ctx.fill();
-	ctx.closePath();
+	ctxrr.beginPath();
+	ctxrr.rect(xPosition,0,20,canvas.height);
+	ctxrr.fillStyle = barColor;
+	ctxrr.fill();
+	ctxrr.closePath();
 	xPosition += 3;
 
-	ctx.beginPath();
-	ctx.rect(0,yPosition,canvas.width,20);
-	ctx.fillStyle = barcolorVertical;
-	ctx.fill();
-	ctx.closePath();
+	ctxrr.beginPath();
+	ctxrr.rect(0,yPosition,canvas.width,20);
+	ctxrr.fillStyle = barcolorVertical;
+	ctxrr.fill();
+	ctxrr.closePath();
 	yPosition += 2;}
 
 
@@ -95,12 +95,12 @@ function buildBoundaries(){
 
 function drawFigure(){
     if (playingrat){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = ballColor;
-    ctx.fill();
-    ctx.closePath();
+    ctxrr.clearRect(0, 0, canvas.width, canvas.height);
+    ctxrr.beginPath();
+    ctxrr.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctxrr.fillStyle = ballColor;
+    ctxrr.fill();
+    ctxrr.closePath();
 
     buildBoundaries(); 
     score += .01;
@@ -145,6 +145,8 @@ function drawFigure(){
 
 
 setInterval(drawFigure,10);
+
+
 
 
 
