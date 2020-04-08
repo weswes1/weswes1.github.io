@@ -1,5 +1,3 @@
-
-
 var canvas = document.getElementById("myCanvastwo");
 var ctx = canvas.getContext("2d");
 
@@ -16,7 +14,7 @@ var rightPressed = false;
 var spacePressed = false;
 var gPressed = false;
 var score = 0;
-
+var playingrat = false;
 
 
 var xPosition = 0;
@@ -25,7 +23,10 @@ var yPosition = 0;
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-var playing = true;
+function playratrace(){
+    playingrat = true;
+    return playingrat;
+}
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -91,7 +92,8 @@ function buildBoundaries(){
 
 
 function drawFigure(){
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (playingrat){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
     ctx.fillStyle = ballColor;
@@ -107,7 +109,7 @@ function drawFigure(){
         random = Math.random();
     	if (random <= 0.33) {barColor = "red";}
     	if (.33 < random <= .66){barColor = "#0095DD";}
-        else {barcolor = "green"} 
+        else {barcolor = "green";} 
     }
 
     if (yPosition == canvas.height){
@@ -115,11 +117,12 @@ function drawFigure(){
     	random = Math.random();
         if (random <= 0.33) {barcolorVertical = "red";}
         if (.33 < random <= .66){barcolorVertical = "#0095DD";}
-        else {barcolorVertical = "green"} 
+        else {barcolorVertical = "green";} 
     }
 
     if ((Math.abs(xPosition-x) <= ballRadius+20) && barColor!==ballColor || (Math.abs(yPosition-y) <= ballRadius+20) && barcolorVertical!==ballColor){
     	alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
+        playingrat=false;
     	score = 0;}
 
     if (spacePressed){
@@ -135,9 +138,8 @@ function drawFigure(){
     if (leftPressed && x >= ballRadius){
     	x-=2;}
     if (rightPressed && x <= canvas.width-ballRadius){
-    	x+=2;}}
+    	x+=2;}}}
+
 
 
 setInterval(drawFigure,10);
-
-
