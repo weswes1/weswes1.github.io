@@ -1,10 +1,10 @@
 
 
-var canvas = document.getElementById("myCanvasfour");
+var canvasfour = document.getElementById("myCanvasfour");
 var ctxrr = canvas.getContext("2d");
 
-var x = canvas.width/2;
-var y = canvas.height/2;
+var x = canvasfour.width/2;
+var y = canvasfour.height/2;
 var ballRadius = 25;
 var barColor = "red";
 var barcolorVertical = "red";
@@ -77,14 +77,14 @@ function keyUpHandler(e) {
 
 function buildBoundaries(){
 	ctxrr.beginPath();
-	ctxrr.rect(xPosition,0,20,canvas.height);
+	ctxrr.rect(xPosition,0,20,canvasfour.height);
 	ctxrr.fillStyle = barColor;
 	ctxrr.fill();
 	ctxrr.closePath();
 	xPosition += 3;
 
 	ctxrr.beginPath();
-	ctxrr.rect(0,yPosition,canvas.width,20);
+	ctxrr.rect(0,yPosition,canvasfour.width,20);
 	ctxrr.fillStyle = barcolorVertical;
 	ctxrr.fill();
 	ctxrr.closePath();
@@ -95,7 +95,7 @@ function buildBoundaries(){
 
 function drawFigure(){
     if (playingrat){
-    ctxrr.clearRect(0, 0, canvas.width, canvas.height);
+    ctxrr.clearRect(0, 0, canvasfour.width, canvasfour.height);
     ctxrr.beginPath();
     ctxrr.arc(x, y, ballRadius, 0, Math.PI*2);
     ctxrr.fillStyle = ballColor;
@@ -106,7 +106,7 @@ function drawFigure(){
     score += .01;
 
 
-    if (xPosition == canvas.width){
+    if (xPosition == canvasfour.width){
     	xPosition = 0;
         random = Math.random();
     	if (random <= 0.33) {barColor = "red";}
@@ -114,7 +114,7 @@ function drawFigure(){
         else {barcolor = "green";} 
     }
 
-    if (yPosition == canvas.height){
+    if (yPosition == canvasfour.height){
     	yPosition = 0;
     	random = Math.random();
         if (random <= 0.33) {barcolorVertical = "red";}
@@ -133,18 +133,20 @@ function drawFigure(){
     	ballColor="#0095DD";}
     if (gPressed){
         ballColor="green";}
-    if (downPressed && y <= canvas.height-ballRadius){
+    if (downPressed && y <= canvasfour.height-ballRadius){
     	y+=2;}
     if (upPressed && y >= ballRadius){
     	y-=2;}
     if (leftPressed && x >= ballRadius){
     	x-=2;}
-    if (rightPressed && x <= canvas.width-ballRadius){
+    if (rightPressed && x <= canvasfour.width-ballRadius){
     	x+=2;}}}
 
 
 
 setInterval(drawFigure,10);
+
+
 
 
 
