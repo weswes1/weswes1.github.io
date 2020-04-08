@@ -11,7 +11,8 @@
 </head>
 <style type="text/css">
  body {
-  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg")}
+  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg")
+  background-repeat: no-repeat;}
           
 #myCanvas {
     background: url("NightSky.png");
@@ -93,14 +94,21 @@
          #gamesection {
           font-family: 'Press Start 2P', cursive;
         }
+         
+        #imagecontainer {
+         display: flex;
+         align-items: center;
+         justify-content: center;}
 
 h1 {
   text-align: center;
   font-family: verdana;
+  color: white;
 
 }
 h2 {
   font-family: 'Press Start 2P', cursive;
+  color: white;
 }
                                          
 
@@ -109,11 +117,11 @@ img {
   border: 3px solid black;
   width: 300px;
   height: 300px;
-  align-items: center;
-  justify-content: center;
 }       
                                          
-p {font-family: Luminari, fantasy;}
+p {font-family: Luminari, fantasy
+   color: white;
+    }
 
 title {
   color: "#ffa500";
@@ -124,6 +132,7 @@ title {
 <p> Check out a few pictures I programmed in python. I make these pictures using for loops and a simply library of shape painting 
 functions. I also incorporate some probabilty and more advanced mathematical techniques for creating light effects, for example. 
 If you are curious, check out my <a href="http://wesleyguergah.wordpress.com"> blog </a> </p>       
+<div id= "image container">
 <img src="Screen Shot 2019-09-14 at 10.15.31.png"></img>
 <img src="james.png"> </img> 
 <img src="peter.png"> </img> 
@@ -140,6 +149,7 @@ If you are curious, check out my <a href="http://wesleyguergah.wordpress.com"> b
 <img src="pirates.png"></img>
 <img src="stonerboy.png"></img>
 <img src="lexie.png"></png>
+</div>
               
 <h1 id ="gamesection"> Game Section </h1>
 <h2> Asteroid Frenzy</h2>
