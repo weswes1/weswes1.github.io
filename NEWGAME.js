@@ -6,7 +6,7 @@ window.addEventListener("keydown", function(e) {
 }, false);
 
 var canvas = document.getElementById("myCanvas");
-var ctxrr = canvas.getContext("2d");
+var ctx = canvas.getContext("2d");
 
 var rightPressed = false;
 var leftPressed = false;
