@@ -1,4 +1,6 @@
-var canvas = document.getElementById("myCanvastwo");
+
+
+var canvas = document.getElementById("myCanvasfour");
 var ctx = canvas.getContext("2d");
 
 var x = canvas.width/2;
@@ -143,3 +145,7 @@ function drawFigure(){
 
 
 setInterval(drawFigure,10);
+
+
+
+
