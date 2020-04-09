@@ -3,8 +3,8 @@
 var canvasfour = document.getElementById("myCanvasfour");
 var ctxrr = canvas.getContext("2d");
 
-var x = canvasfour.width/2;
-var y = canvasfour.height/2;
+var xxx = canvasfour.width/2;
+var yyy = canvasfour.height/2;
 var ballRadius = 25;
 var barColor = "red";
 var barcolorVertical = "red";
@@ -97,7 +97,7 @@ function drawFigure(){
     if (playingrat){
     ctxrr.clearRect(0, 0, canvasfour.width, canvasfour.height);
     ctxrr.beginPath();
-    ctxrr.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctxrr.arc(xxx, yyy, ballRadius, 0, Math.PI*2);
     ctxrr.fillStyle = ballColor;
     ctxrr.fill();
     ctxrr.closePath();
@@ -122,7 +122,7 @@ function drawFigure(){
         else {barcolorVertical = "green";} 
     }
 
-    if ((Math.abs(xPosition-x) <= ballRadius+20) && barColor!==ballColor || (Math.abs(yPosition-y) <= ballRadius+20) && barcolorVertical!==ballColor){
+    if ((Math.abs(xPosition-xxx) <= ballRadius+20) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+20) && barcolorVertical!==ballColor){
     	alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
         playingrat=false;
     	score = 0;}
@@ -133,18 +133,23 @@ function drawFigure(){
     	ballColor="#0095DD";}
     if (gPressed){
         ballColor="green";}
-    if (downPressed && y <= canvasfour.height-ballRadius){
-    	y+=2;}
-    if (upPressed && y >= ballRadius){
-    	y-=2;}
-    if (leftPressed && x >= ballRadius){
-    	x-=2;}
-    if (rightPressed && x <= canvasfour.width-ballRadius){
-    	x+=2;}}}
+    if (downPressed && yyy <= canvasfour.height-ballRadius){
+    	yyy+=2;}
+    if (upPressed && yyy >= ballRadius){
+    	yyy-=2;}
+    if (leftPressed && xxx >= ballRadius){
+    	xxx-=2;}
+    if (rightPressed && xxx <= canvasfour.width-ballRadius){
+    	xxx+=2;}}}
 
 
 
 setInterval(drawFigure,10);
+
+
+
+
+
 
 
 
