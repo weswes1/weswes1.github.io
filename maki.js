@@ -124,8 +124,28 @@ function drawFigure(){
 
     if ((Math.abs(xPosition-xxx) <= ballRadius+20) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+20) && barcolorVertical!==ballColor){
     	alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
-        playingrat=false;
-    	score = 0;}
+	xxx = canvasfour.width/2;
+        yyy = canvasfour.height/2;
+        ballRadius = 25;
+        barColor = "red";
+        barcolorVertical = "red";
+        ballColor;
+        upPressed = false;
+        downPressed = false;
+        leftPressed = false;
+        rightPressed = false;
+        spacePressed = false;
+        gPressed = false;
+        score = 0;
+        playingrat = false;
+        xPosition = 0;
+        yPosition = 0;
+
+	    
+    
+    
+    
+    }
 
     if (spacePressed){
     	ballColor = "red";}
