@@ -1,7 +1,7 @@
 
 
 var canvasfour = document.getElementById("myCanvasfour");
-var ctxrr = canvas.getContext("2d");
+var ctxrr = canvasfour.getContext("2d");
 
 var xxx = canvasfour.width/2;
 var yyy = canvasfour.height/2;
