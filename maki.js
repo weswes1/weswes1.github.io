@@ -122,7 +122,7 @@ function drawFigure(){
         else {barcolorVertical = "green";} 
     }
 
-    if ((Math.abs(xPosition-xxx) <= ballRadius+20) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+20) && barcolorVertical!==ballColor){
+    if ((Math.abs(xPosition-xxx) <= ballRadius+15) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+15) && barcolorVertical!==ballColor){
     	alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
 	xxx = canvasfour.width/2;
         yyy = canvasfour.height/2;
