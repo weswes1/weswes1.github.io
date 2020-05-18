@@ -108,14 +108,18 @@ function drawFigure(){
 
     if (xPosition == canvasfour.width){
         xPosition = 0;
-        if (Math.random() <= 0.33) {barColor = "red";}
-        else {barcolor = "green";} 
+        if (Math.random() <= 0.5) {
+            barColor = "red";}
+        else {
+            barcolor = "green";} 
     }
 
     if (yPosition == canvasfour.height){
         yPosition = 0;
-        if (Math.random() <= 0.5) {barcolorVertical = "#0095DD";}
-        else {barcolorVertical = "red";} 
+        if (Math.random() <= 0.5) {
+            barcolorVertical = "#0095DD";}
+        else {
+            barcolorVertical = "red";} 
     }
 
     if ((Math.abs(xPosition-xxx) <= ballRadius+15) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+15) && barcolorVertical!==ballColor){
@@ -137,10 +141,6 @@ function drawFigure(){
         xPosition = 0;
         yPosition = 0;
 
-        
-    
-    
-    
     }
 
     if (spacePressed){
