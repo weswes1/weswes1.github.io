@@ -44,7 +44,7 @@ function keyDownHandler(e) {
         downPressed = true;
     }
     else if (e.key == " " || e.key == "Spacebar") {
-    	spacePressed =true;}
+        spacePressed =true;}
 
     else if (e.key == "g"){
         gPressed = true;
@@ -64,7 +64,7 @@ function keyUpHandler(e) {
     else if (e.key == "Down" || e.key == "ArrowDown") {
         downPressed = false;
     }
-	else if (e.key == " " || e.key == "Spacebar") {
+    else if (e.key == " " || e.key == "Spacebar") {
         spacePressed = false;
     }
 
@@ -76,19 +76,19 @@ function keyUpHandler(e) {
 
 
 function buildBoundaries(){
-	ctxrr.beginPath();
-	ctxrr.rect(xPosition,0,20,canvasfour.height);
-	ctxrr.fillStyle = barColor;
-	ctxrr.fill();
-	ctxrr.closePath();
-	xPosition += 3;
+    ctxrr.beginPath();
+    ctxrr.rect(xPosition,0,20,canvasfour.height);
+    ctxrr.fillStyle = barColor;
+    ctxrr.fill();
+    ctxrr.closePath();
+    xPosition += 3;
 
-	ctxrr.beginPath();
-	ctxrr.rect(0,yPosition,canvasfour.width,20);
-	ctxrr.fillStyle = barcolorVertical;
-	ctxrr.fill();
-	ctxrr.closePath();
-	yPosition += 2;}
+    ctxrr.beginPath();
+    ctxrr.rect(0,yPosition,canvasfour.width,20);
+    ctxrr.fillStyle = barcolorVertical;
+    ctxrr.fill();
+    ctxrr.closePath();
+    yPosition += 2;}
 
 
 
@@ -107,24 +107,20 @@ function drawFigure(){
 
 
     if (xPosition == canvasfour.width){
-    	xPosition = 0;
-        random = Math.random();
-    	if (random <= 0.33) {barColor = "red";}
-    	if (.33 < random <= .66){barColor = "#0095DD";}
+        xPosition = 0;
+        if (Math.random() <= 0.33) {barColor = "red";}
         else {barcolor = "green";} 
     }
 
     if (yPosition == canvasfour.height){
-    	yPosition = 0;
-    	random = Math.random();
-        if (random <= 0.33) {barcolorVertical = "red";}
-        if (.33 < random <= .66){barcolorVertical = "#0095DD";}
-        else {barcolorVertical = "green";} 
+        yPosition = 0;
+        if (Math.random() <= 0.5) {barcolorVertical = "#0095DD";}
+        else {barcolorVertical = "red";} 
     }
 
     if ((Math.abs(xPosition-xxx) <= ballRadius+15) && barColor!==ballColor || (Math.abs(yPosition-yyy) <= ballRadius+15) && barcolorVertical!==ballColor){
-    	alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
-	xxx = canvasfour.width/2;
+        alert("The color of the ball mismatched the color of the bar. Game over. Your score: " + Math.trunc(score));
+    xxx = canvasfour.width/2;
         yyy = canvasfour.height/2;
         ballRadius = 25;
         barColor = "red";
@@ -141,35 +137,30 @@ function drawFigure(){
         xPosition = 0;
         yPosition = 0;
 
-	    
+        
     
     
     
     }
 
     if (spacePressed){
-    	ballColor = "red";}
+        ballColor = "red";}
     if (spacePressed == false){
-    	ballColor="#0095DD";}
+        ballColor="#0095DD";}
     if (gPressed){
         ballColor="green";}
     if (downPressed && yyy <= canvasfour.height-ballRadius){
-    	yyy+=2;}
+        yyy+=2;}
     if (upPressed && yyy >= ballRadius){
-    	yyy-=2;}
+        yyy-=2;}
     if (leftPressed && xxx >= ballRadius){
-    	xxx-=2;}
+        xxx-=2;}
     if (rightPressed && xxx <= canvasfour.width-ballRadius){
-    	xxx+=2;}}}
+        xxx+=2;}}}
 
 
 
 setInterval(drawFigure,10);
-
-
-
-
-
 
 
 
