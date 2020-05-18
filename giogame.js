@@ -6,8 +6,8 @@ var leftbuttonPressed = false;
 var rightbuttonPressed = false;
 var upbuttonPressed = false;
 var spacePressed = false;
-var vertiPosition = 300;
-var horizPosition = 380;
+var vertiPosition = myCanvasfive.height/2;
+var horizPosition = myCanvasfive.width/2;
 
 var xsPosition = 0;
 var ysPosition = 0;
@@ -68,13 +68,13 @@ function drawCircle(){
         if (gameisplaying == true){
 
         if (upbuttonPressed && vertiPosition >= 20){vertiPosition-= 2;}
-        if (downbuttonPressed && vertiPosition <= 580){vertiPosition+= 2;}
+        if (downbuttonPressed && vertiPosition <= myCanvasfive.height){vertiPosition+= 2;}
         if (leftbuttonPressed && horizPosition >= 20){horizPosition-= 2;}
-        if (rightbuttonPressed && horizPosition <= 760){horizPosition+= 2;}
+        if (rightbuttonPressed && horizPosition <= myCanvasfive.width){horizPosition+= 2;}
         if (spacePressed){circleColor = "Red";}
         if (spacePressed == false){circleColor = "Blue";}
 
-        canvasfive.clearRect(0, 0, 780,600);
+        canvasfive.clearRect(0, 0,myCanvasfive.width, myCanvasfive.height);
 
         generateVoid();
 
