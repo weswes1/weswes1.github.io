@@ -84,7 +84,7 @@ function drawCircle(){
         canvasfive.fill();
         canvasfive.closePath();
 
-        buildBoundaries();
+        buildBoundariesgio();
 
             if (ysPosition == myCanvasfive.height){
                 ysPosition = 0;
@@ -159,7 +159,7 @@ function generateVoid(){
 
 }
 
-function buildBoundaries(){
+function buildBoundariesgio(){
     canvasfive.beginPath();
     canvasfive.rect(xsPosition,0,20,myCanvasfive.height);
     canvasfive.fillStyle = horibarColor;
