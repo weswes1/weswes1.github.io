@@ -24,18 +24,24 @@
       margin-left: 250px;
       margin-top:20px;                           
       top: 1300px;
+      background-repeat: no-repeat;
+      background-size: contain;
       }
       #myCanvastwo {
       background: url("saturn.png");
       border: 5px solid blue;
       margin-left: 250px;
       margin-top: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
       }
                                   
     #canvasThree {
             background: url("pirates.png");
             margin-left: 250px;
             margin-top: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
                                          
    #myCanvasfour {
@@ -43,16 +49,25 @@
             margin-left: 250px;
             margin-top: 20px;
             border: 5px solid black;
-        }
+            background-repeat: no-repeat;
+            background-size: contain}
                                            
   #myCanvasfiver {
       background: url("lexie.png");
       border: 5px solid black;
       margin-left: 250px;
       margin-top: 20px;
-      } 
+      background-repeat: no-repeat;
+      background-size: contain;} 
+                                 
+#picassoCanvas {
+margin-left: 250px;
+margin-top: 20px;
+background: url("arabesque.png");
+background-repeat: no-repeat;
+background-size: contain;}
                                            
-                                           
+                         
                         
         #stopbutton{
             border-radius: 50%;
@@ -240,7 +255,17 @@ of the ball and the bar are mismatched, the game ends. Try to stay alive as long
 <div id="game5">  
 <canvas id="myCanvasfiver" width="780" height="600"> </canvas>
 <button id = "playbutton_five" onclick="letsPlay()">Play</button> 
-</div>                            
+</div>
+                                                   
+                                                   
+                                                   
+<h1 id ="gamesection"> Digital Art Section </h1>
+<p> I have games and still frame pictures above. Today I realized I could make some pretty cool shifting pieces. These are not games,
+Shifting digital pieces. Check it out. </p>
+                                                   
+                                                   
+<h2> PICASSO`s MUSE </h2>
+<canvas id="picassoCanvas" width="780" height="780"> </canvas>
 
 <p> What do you think? Email me at guergahwes[at]gmail[dot]com. If you want, leave a comment. 
 Go check out my blog, too! Link is at the top of the site! Continue to visit to see new art and games. 
@@ -250,6 +275,8 @@ Go check out my blog, too! Link is at the top of the site! Continue to visit to 
 <script src = "basket.js"></script> 
 <script src = "maki.js"></script>
 <script src = "giogame.js"></script>
+<script src="picasso.js"></script>
+
 
 </body>
 </html>
