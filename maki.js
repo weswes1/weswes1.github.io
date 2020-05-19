@@ -6,7 +6,7 @@ var ctxrr = canvasfour.getContext("2d");
 var xxx = canvasfour.width/2;
 var yyy = canvasfour.height/2;
 var ballRadius = 25;
-var barColor = "red";
+var barColor = "green";
 var barcolorVertical = "red";
 var ballColor;
 var upPressed = false;
@@ -81,14 +81,14 @@ function buildBoundaries(){
     ctxrr.fillStyle = barColor;
     ctxrr.fill();
     ctxrr.closePath();
-    xPosition += 3;
+    xPosition += 4;
 
     ctxrr.beginPath();
     ctxrr.rect(0,yPosition,canvasfour.width,20);
     ctxrr.fillStyle = barcolorVertical;
     ctxrr.fill();
     ctxrr.closePath();
-    yPosition += 2;}
+    yPosition += 3;}
 
 
 
@@ -105,13 +105,8 @@ function drawFigure(){
     buildBoundaries(); 
     score += .01;
 
-
     if (xPosition == canvasfour.width){
         xPosition = 0;
-        if (Math.random() <= 0.5) {
-            barColor = "red";}
-        else {
-            barcolor = "green";} 
     }
 
     if (yPosition == canvasfour.height){
@@ -127,8 +122,6 @@ function drawFigure(){
     xxx = canvasfour.width/2;
         yyy = canvasfour.height/2;
         ballRadius = 25;
-        barColor = "red";
-        barcolorVertical = "red";
         ballColor;
         upPressed = false;
         downPressed = false;
@@ -161,7 +154,6 @@ function drawFigure(){
 
 
 setInterval(drawFigure,10);
-
 
 
 
