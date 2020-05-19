@@ -14,7 +14,6 @@ var skank= 0;
 function makeArt(){
 
 
-	picass.clearRect(0, 0, picassocanvas.width, picassocanvas.height);
 	picass.beginPath();
 	picass.arc(picassocanvas.width/2,picassocanvas.height/2, growthRad, 0, Math.PI*2);
 	picass.fillStyle = "black";
@@ -103,3 +102,4 @@ function makeArt(){
 
 
 setInterval(makeArt,10);
+
