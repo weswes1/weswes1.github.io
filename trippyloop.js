@@ -9,6 +9,7 @@ var shifter = 0;
 
 function makeTripper(){
 	for (var i=0; i <=10; i++){
+		trippers.clearRect(trippycanvas.width,trippycanvas.height,0,0,0);
 		trippers.beginPath();
 		trippers.arc(trippycanvas.width/2-40*i,trippycanvas.height/2-shifter, radiusvariable-5*i, 0, Math.PI*2);
 		trippers.arc(trippycanvas.width/2+40*i,trippycanvas.height/2+shifter, radiusvariable-5*i, 0, Math.PI*2);
@@ -91,13 +92,15 @@ function makeTripper(){
 		trippers.fill();
 		trippers.closePath();
 
+
 		trippers.beginPath();
 		trippers.arc(trippycanvas.width/2-40*i-shifter*.5,trippycanvas.height/2, radiusvariable-5*i, 0, Math.PI*2);
 		trippers.arc(trippycanvas.width/2+40*i+shifter*.5,trippycanvas.height/2, radiusvariable-5*i, 0, Math.PI*2);
 		trippers.fillStyle = "white";
 		trippers.fill();
 		trippers.closePath();
-
+		
+		trippers.clearRect(trippycanvas.width,trippycanvas.height,0,0,0);
 
 		}
 
